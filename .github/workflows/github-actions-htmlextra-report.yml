@@ -1,6 +1,6 @@
 # This is an intermediate workflow to help you produce a HTML extra test results report
 
-name: "Newman Tests"
+name: "Create API testing report"
 on: [push, pull_request]
 
 jobs:
