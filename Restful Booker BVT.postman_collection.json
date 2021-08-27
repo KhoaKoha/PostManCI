@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5d1ba4ae-d097-4a2b-a251-801c44b01f7a",
+		"_postman_id": "d8bde76c-1e2b-46e9-ab0a-c29ff9236eea",
 		"name": "Restful Booker BVT",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,17 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c34de8f7-c523-471a-b74b-b065d0aa980e",
 								"exec": [
-									"",
-									"var jsonData = pm.response.json();",
-									"",
-									"//we created at least one booking at the folder level, so there should always be bookings",
-									"pm.test(\"Response is not empty\", function () {",
-									"    // See Chaijs docs for complete list of available assertions",
-									"    // https://www.chaijs.com/api/bdd",
-									"    pm.expect(jsonData).to.not.have.lengthOf(0);",
-									"});",
 									""
 								],
 								"type": "text/javascript"
@@ -34,10 +24,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{rb_url}}/booking",
 							"host": [
@@ -56,7 +42,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "f90c42c7-9bf8-42c4-942d-e4ae5cbabef1",
 								"exec": [
 									""
 								],
@@ -66,7 +51,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "74cc0f85-d34c-4e5c-b9f9-41dd90417f83",
 								"exec": [
 									"",
 									"var jsonData = pm.response.json();",
@@ -93,10 +77,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{rb_url}}/booking?firstname={{firstname}}",
 							"host": [
@@ -121,7 +101,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "f90c42c7-9bf8-42c4-942d-e4ae5cbabef1",
 								"exec": [
 									""
 								],
@@ -131,7 +110,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "74cc0f85-d34c-4e5c-b9f9-41dd90417f83",
 								"exec": [
 									"",
 									"var jsonData = pm.response.json();",
@@ -156,10 +134,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{rb_url}}/booking?lastname={{lastname}}",
 							"host": [
@@ -184,7 +158,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "f90c42c7-9bf8-42c4-942d-e4ae5cbabef1",
 								"exec": [
 									""
 								],
@@ -194,7 +167,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "74cc0f85-d34c-4e5c-b9f9-41dd90417f83",
 								"exec": [
 									"",
 									"var jsonData = pm.response.json();",
@@ -219,10 +191,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{rb_url}}/booking?firstname={{firstname}}&lastname={{lastname}}",
 							"host": [
@@ -251,7 +219,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "f90c42c7-9bf8-42c4-942d-e4ae5cbabef1",
 								"exec": [
 									""
 								],
@@ -261,24 +228,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "74cc0f85-d34c-4e5c-b9f9-41dd90417f83",
 								"exec": [
-									"",
-									"var jsonData = pm.response.json();",
-									"",
-									"pm.test(\"Response is not empty\", function () {",
-									"    pm.expect(jsonData).to.not.have.lengthOf(0);",
-									"});",
-									"",
-									"// use lodash map to get a flat array of all the returned booking ids",
-									"// https://lodash.com/docs/4.17.11#map",
-									"var booking_ids = _.map(jsonData, 'bookingid');",
-									"console.log(booking_ids);",
-									"",
-									"// the id for our newly created object should be there",
-									"pm.test(\"Expected booking id is in the returned array\", function () {",
-									"    pm.expect(booking_ids).to.include(pm.variables.get(\"booking_id\"));",
-									"});",
 									""
 								],
 								"type": "text/javascript"
@@ -288,10 +238,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{rb_url}}/booking?checkin={{checkin}}",
 							"host": [
@@ -316,7 +262,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "f90c42c7-9bf8-42c4-942d-e4ae5cbabef1",
 								"exec": [
 									""
 								],
@@ -326,7 +271,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "74cc0f85-d34c-4e5c-b9f9-41dd90417f83",
 								"exec": [
 									"",
 									"var jsonData = pm.response.json();",
@@ -352,10 +296,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{rb_url}}/booking?checkout={{checkout}}",
 							"host": [
@@ -380,7 +320,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8b187d98-662c-48ae-9e5d-ed529ef45d12",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -395,10 +334,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{rb_url}}/booking?firstname=non_existent_name",
 							"host": [
@@ -422,7 +357,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "eac3a568-9f07-486c-8969-cc852363f656",
 						"type": "text/javascript",
 						"exec": [
 							"",
@@ -445,7 +379,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "90ac4d0a-93bd-4468-810b-5f23ce7945f7",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
@@ -478,7 +411,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "c4d895d9-1886-4369-819e-92688aad5e88",
 								"exec": [
 									"const createBooking = {",
 									"  url: pm.environment.get(\"rb_url\") + \"/booking\",",
@@ -501,7 +433,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1728438e-328c-406c-93d8-b32cba372079",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -519,10 +450,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{rb_url}}/booking/{{booking_id}}",
 							"host": [
@@ -542,7 +469,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "15fc9672-7ee2-4c7a-9346-0637f73faaa5",
 								"exec": [
 									"pm.test(\"Status code is 404\", function () {",
 									"    pm.response.to.have.status(\"Not Found\")",
@@ -555,10 +481,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{rb_url}}/booking/0",
 							"host": [
@@ -583,7 +505,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b4381f93-9575-411f-a03e-e23a586a5db8",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -634,7 +555,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b4381f93-9575-411f-a03e-e23a586a5db8",
 								"exec": [
 									"pm.test(\"Create fails\", function () {",
 									"    pm.response.to.not.have.success;",
@@ -680,7 +600,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "8038a405-e8b2-42f0-a30e-68bfe1fcbfd8",
 								"exec": [
 									"// create the base booking",
 									"const createBooking = {",
@@ -708,7 +627,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fc46bdbf-a724-43ae-80f9-2b1251bfc890",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -794,7 +712,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "8038a405-e8b2-42f0-a30e-68bfe1fcbfd8",
 								"exec": [
 									"// create the base booking",
 									"const createBooking = {",
@@ -818,19 +735,8 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fc46bdbf-a724-43ae-80f9-2b1251bfc890",
 								"exec": [
-									"pm.test(\"Update fails\", function () {",
-									"    pm.response.to.not.have.success;",
-									"});",
-									"",
-									"pm.sendRequest(pm.environment.get(\"rb_url\") + \"/booking/\" + pm.variables.get(\"booking_id\"), function (err, res) {",
-									"  if (err) { console.log(err); }",
-									"  pm.test('Booking is unchanged', function () {",
-									"    pm.expect(err).to.equal(null);",
-									"    pm.expect(res.text()).to.include(pm.variables.get(\"firstname\"));",
-									"  });",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -890,22 +796,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "8038a405-e8b2-42f0-a30e-68bfe1fcbfd8",
 								"exec": [
-									"// create the base booking",
-									"const createBooking = {",
-									"  url: pm.environment.get(\"rb_url\") + \"/booking\",",
-									"  method: 'POST',",
-									"  header: 'Content-Type:application/json',",
-									"  body: {",
-									"    mode: 'raw',",
-									"    raw: JSON.stringify(pm.variables.get(\"new_booking\"))",
-									"  }",
-									"};",
-									"pm.sendRequest(createBooking, function (err, res) {",
-									"    pm.expect(err).is.null;",
-									"    pm.variables.set(\"booking_id\", res.json().bookingid)",
-									"});",
 									""
 								],
 								"type": "text/javascript"
@@ -914,19 +805,8 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fc46bdbf-a724-43ae-80f9-2b1251bfc890",
 								"exec": [
-									"pm.test(\"Update fails\", function () {",
-									"    pm.response.to.not.have.success;",
-									"});",
-									"",
-									"pm.sendRequest(pm.environment.get(\"rb_url\") + \"/booking/\" + pm.variables.get(\"booking_id\"), function (err, res) {",
-									"  if (err) { console.log(err); }",
-									"  pm.test('Booking is unchanged', function () {",
-									"    pm.expect(err).to.equal(null);",
-									"    pm.expect(res.text()).to.include(pm.variables.get(\"firstname\"));",
-									"  });",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -991,7 +871,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "d41d9c0c-c456-4394-aff2-71ca18fe5dcd",
 								"exec": [
 									"// create the base booking",
 									"const createBooking = {",
@@ -1019,7 +898,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f306c460-57fc-4ab6-bd34-6bbe86ac1d97",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -1092,7 +970,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "d41d9c0c-c456-4394-aff2-71ca18fe5dcd",
 								"exec": [
 									"// create the base booking",
 									"const createBooking = {",
@@ -1115,19 +992,8 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f306c460-57fc-4ab6-bd34-6bbe86ac1d97",
 								"exec": [
-									"pm.test(\"Patch fails\", function () {",
-									"    pm.response.to.not.have.success;",
-									"});",
-									"",
-									"pm.sendRequest(pm.environment.get(\"rb_url\") + \"/booking/\" + pm.variables.get(\"booking_id\"), function (err, res) {",
-									"  if (err) { console.log(err); }",
-									"  pm.test('Booking is unchanged', function () {",
-									"    pm.expect(err).to.equal(null);",
-									"    pm.expect(res.text()).to.include(pm.variables.get(\"firstname\"));",
-									"  });",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1189,7 +1055,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "63b6f724-102f-4d03-8675-f30f5f3a988b",
 						"exec": [
 							"pm.test(\"Ping is successful\", function () {",
 							"    pm.response.to.be.success;",
@@ -1202,10 +1067,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "{{rb_url}}/ping",
 					"host": [
@@ -1224,7 +1085,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "cd2ebd72-b117-48c1-aaea-eb85c0c8753c",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1269,7 +1129,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "d27455dc-a367-4d1f-890f-f5fea189d0ff",
 						"exec": [
 							"// create the base booking",
 							"const createBooking = {",
@@ -1292,20 +1151,8 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6057ab1f-a1bc-4186-bfab-4d0cd2d6ff9f",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"",
-							"pm.sendRequest(pm.environment.get(\"rb_url\") + \"/booking/\" + pm.variables.get(\"booking_id\"), function (err, res) {",
-							"  if (err) { console.log(err); }",
-							"  pm.test('Booking no longer exists', function () {",
-							"    pm.expect(err).to.equal(null);",
-							"    pm.expect(res.code).to.eql(404);",
-							"  });",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -1338,7 +1185,6 @@
 						"value": "token=abc123"
 					}
 				],
-				"body": {},
 				"url": {
 					"raw": "{{rb_url}}/booking/{{booking_id}}",
 					"host": [
@@ -1357,7 +1203,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "858f0d4e-0d8a-4587-a962-f5d8f2446884",
 				"type": "text/javascript",
 				"exec": [
 					"// top names of 1996",
@@ -1411,7 +1256,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "da1316f6-9655-441e-bd27-8abc3715f398",
 				"type": "text/javascript",
 				"exec": [
 					""
